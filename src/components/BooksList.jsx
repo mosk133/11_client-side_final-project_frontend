@@ -8,7 +8,6 @@ export const BooksList = ({ bookList }) => {
     return (
         <ul>
             {bookList.map((book) => {
-                console.log(book);
                 return <BookCard key={book.id} book={book} />;
             })}
         </ul>

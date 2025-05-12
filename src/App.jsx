@@ -1,26 +1,16 @@
 import './App.css'
-import { useState, useEffect } from 'react'
 import { Header } from './components/Header'
 import { BooksList } from './components/BooksList';
+import { BookForm } from './components/BookForm';
+import { useBooks } from './hooks/useBooks'
 
 function App() {
-  const [books, setBooks] = useState([]);
-  const URL = "http://localhost:8080/books";
-
-  useEffect(() => {
-    globalThis.fetch(URL)
-      .then((response) => response.json())
-      .then((data) => {
-        setBooks(data);
-      })
-      .catch((error) => {
-        console.error("Error", error);
-      });
-  }, []);
+  const {books, addBook} = useBooks([]);
 
   return (
     <>
       <Header />
+      <BookForm onCreateBook={addBook}/>
       <BooksList bookList={books} />
     </>
   )

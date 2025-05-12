@@ -1,7 +1,6 @@
 export const BookCard = ({book}) => {
     return (
         <>
-            {console.log(book.title)}
             <li>
                 <h4>
                     {book.title}
