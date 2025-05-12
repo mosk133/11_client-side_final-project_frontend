@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useBooks = () => {
   const [books, setBook] = useState([]);
-  const URL = "http://localhost:8080/books";
+  const URL = import.meta.env.VITE_API_URL;
 
   const addBook = async (newBook) => {
     try {
@@ -27,6 +27,16 @@ export const useBooks = () => {
     }
   };
 
+  const deleteBook = async (id) => {
+    try {
+      await fetch(`${URL}/${id}`, { method: "DELETE" });
+      
+      setBook((current) => current.filter((book) => book.id !== id));
+    } catch (error) {
+      console.error("Error deleting book:", error);
+    }
+  };
+
   useEffect(() => {
     globalThis
       .fetch(URL)
@@ -42,5 +52,6 @@ export const useBooks = () => {
   return {
     books: books,
     addBook: addBook,
+    deleteBook: deleteBook,
   };
 };

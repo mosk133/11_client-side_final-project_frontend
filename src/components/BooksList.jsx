@@ -1,6 +1,6 @@
 import { BookCard } from './BookCard';
 
-export const BooksList = ({ bookList }) => {
+export const BooksList = ({ bookList, onDeleteBook }) => {
     if (bookList.length === 0) {
         return <h3>Empty books list</h3>;
     }
@@ -8,7 +8,7 @@ export const BooksList = ({ bookList }) => {
     return (
         <ul>
             {bookList.map((book) => {
-                return <BookCard key={book.id} book={book} />;
+                return <BookCard key={book.id} book={book} onDelete={() => onDeleteBook(book.id)} />;
             })}
         </ul>
     );
