@@ -5,13 +5,13 @@ import { BookForm } from './components/BookForm';
 import { useBooks } from './hooks/useBooks'
 
 function App() {
-  const {books, addBook, deleteBook} = useBooks([]);
+  const {books, addBook, deleteBook, loading, saving} = useBooks([]);
 
   return (
     <>
       <Header />
-      <BookForm onCreateBook={addBook}/>
-      <BooksList bookList={books} onDeleteBook={deleteBook} />
+      <BookForm onCreateBook={addBook} isSaving={saving} />
+      <BooksList bookList={books} onDeleteBook={deleteBook} loading={loading} saving={saving} />
     </>
   )
 }

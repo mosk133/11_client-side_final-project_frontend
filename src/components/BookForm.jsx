@@ -1,4 +1,4 @@
-export const BookForm = ({ onCreateBook }) => {
+export const BookForm = ({ onCreateBook, isSaving }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -33,7 +33,9 @@ export const BookForm = ({ onCreateBook }) => {
                     <option value="in progress">In Progress</option>
                     <option value="read">Read</option>
                 </select>
-                <button type="submit">Add Book</button>
+                <button type="submit" disabled={isSaving}>
+                    {isSaving ? "Saving..." : "Add Book"}
+                </button>
             </form>
         </div>
     )
