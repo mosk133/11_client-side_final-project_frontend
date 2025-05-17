@@ -1,6 +1,6 @@
 import { BookCard } from './BookCard';
 
-export const BooksList = ({ bookList, onDeleteBook, loading, saving }) => {
+export const BooksList = ({ bookList, onDeleteBook, onEditBook, loading, saving }) => {
     if (loading) {
         return (
             <div>
@@ -20,7 +20,7 @@ export const BooksList = ({ bookList, onDeleteBook, loading, saving }) => {
     return (
         <ul>
             {bookList.map((book) => {
-                return <BookCard key={book.id} book={book} onDelete={() => onDeleteBook(book.id)} />;
+                return <BookCard key={book.id} book={book} onDelete={() => onDeleteBook(book.id)} onEdit={() => onEditBook(book)}  />;
             })}
         </ul>
     );

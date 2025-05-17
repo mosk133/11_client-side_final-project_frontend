@@ -3,15 +3,25 @@ import { Header } from './components/Header'
 import { BooksList } from './components/BooksList';
 import { BookForm } from './components/BookForm';
 import { useBooks } from './hooks/useBooks'
+import { useBookForm } from './hooks/useBookForm';
 
 function App() {
-  const {books, addBook, deleteBook, loading, saving} = useBooks([]);
+  const { books, addBook, updateBook, deleteBook, isLoading, isSaving } = useBooks([]);
+  const { isVisible, editingBook, openFormForAdd, openFormForEdit } = useBookForm();
+
+  console.log(books)
 
   return (
     <>
       <Header />
-      <BookForm onCreateBook={addBook} isSaving={saving} />
-      <BooksList bookList={books} onDeleteBook={deleteBook} loading={loading} saving={saving} />
+
+      <button onClick={openFormForAdd}>
+        {isVisible ? "Cancel" : "Add New Book"}
+      </button>
+
+      {isVisible && <BookForm onCreateBook={addBook} onUpdateBook={updateBook} editingBook={editingBook} isSaving={isSaving} />}
+
+      <BooksList bookList={books} onDeleteBook={deleteBook} onEditBook={openFormForEdit} loading={isLoading} saving={isSaving} />
     </>
   )
 }

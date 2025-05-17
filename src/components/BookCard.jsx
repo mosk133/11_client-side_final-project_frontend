@@ -1,11 +1,8 @@
-export const BookCard = ({ book, onDelete }) => {
-
-    function deleteAlert() {
-        if (confirm("Are you sure you want to detele this book?") == true) {
+export const BookCard = ({ book, onDelete, onEdit }) => {
+    const handleDelete = () => {
+        if (confirm("Are you sure you want to delete this book?") === true) {
             onDelete().then(() => {
-                setTimeout(() => {
-                    alert("Book deleted successfully!");
-                }, 800);
+                alert("Book deleted successfully!");
             });
         }
     }
@@ -16,7 +13,8 @@ export const BookCard = ({ book, onDelete }) => {
             <p>{book.author}</p>
             <p>{book.year}</p>
             <span>{book.status}</span>
-            <button onClick={deleteAlert}>Delete</button>
+            <button onClick={onEdit}>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
         </li>
     );
 };
