@@ -14,10 +14,15 @@ export const useBookForm = () => {
     setIsVisible(true);
   };
 
+  const closeForm = () => {
+    setIsVisible(false);
+  };
+
   return {
     isVisible,
     editingBook,
     openFormForAdd,
     openFormForEdit,
+    closeForm,
   };
 };

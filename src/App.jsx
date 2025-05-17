@@ -7,20 +7,17 @@ import { useBookForm } from './hooks/useBookForm';
 
 function App() {
   const { books, addBook, updateBook, deleteBook, isLoading, isSaving } = useBooks([]);
-  const { isVisible, editingBook, openFormForAdd, openFormForEdit } = useBookForm();
-
-  console.log(books)
+  const { isVisible, editingBook, openFormForAdd, openFormForEdit, closeForm } = useBookForm();
 
   return (
     <>
       <Header />
 
-      <button onClick={openFormForAdd}>
+      <button onClick={isVisible ? closeForm : openFormForAdd}>
         {isVisible ? "Cancel" : "Add New Book"}
       </button>
 
       {isVisible && <BookForm onCreateBook={addBook} onUpdateBook={updateBook} editingBook={editingBook} isSaving={isSaving} />}
-
       <BooksList bookList={books} onDeleteBook={deleteBook} onEditBook={openFormForEdit} loading={isLoading} saving={isSaving} />
     </>
   )

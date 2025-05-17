@@ -28,6 +28,7 @@ export const useBooks = () => {
       console.error("Error creating book:", error);
     } finally {
       handleSaving(false);
+      alert("Book added successfully!");
     }
   };
 
@@ -54,6 +55,7 @@ export const useBooks = () => {
       console.error("Error updating book:", error);
     } finally {
       handleSaving(false);
+      alert("Book updated successfully!");
     }
   };
 
@@ -71,7 +73,7 @@ export const useBooks = () => {
 
   useEffect(() => {
     globalThis
-      .fetch(import.meta.env.VITE_API_URL)
+      .fetch(URL)
       .then((response) => response.json())
       .then((data) => {
         setBook(data);
@@ -81,15 +83,8 @@ export const useBooks = () => {
         console.error("Error", error);
         handleLoading(false);
       });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (isSaving === true) {
-      setTimeout(() => {
-        alert("Book added successfully!");
-      }, 500);
-    }
-  }, [isSaving]);
 
   return {
     books,
