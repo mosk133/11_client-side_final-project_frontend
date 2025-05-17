@@ -1,9 +1,9 @@
-import './App.css'
 import { Header } from './components/Header'
 import { BooksList } from './components/BooksList';
 import { BookForm } from './components/BookForm';
 import { useBooks } from './hooks/useBooks'
 import { useBookForm } from './hooks/useBookForm';
+import styles from './components/App.module.css';
 
 function App() {
   const { books, addBook, updateBook, deleteBook, isLoading, isSaving } = useBooks([]);
@@ -13,7 +13,7 @@ function App() {
     <>
       <Header />
 
-      <button onClick={isVisible ? closeForm : openFormForAdd}>
+      <button className={styles.button} onClick={isVisible ? closeForm : openFormForAdd}>
         {isVisible ? "Cancel" : "Add New Book"}
       </button>
 
