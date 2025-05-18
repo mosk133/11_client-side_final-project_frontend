@@ -8,8 +8,9 @@
   cursor: pointer;
   transition: background-color 0.2s ease;
   align-self: flex-start;
+  margin-bottom: 1.50rem;
 }
 
-button:hover:not(:disabled) {
+button:active {
   background-color: #43a047;
 }

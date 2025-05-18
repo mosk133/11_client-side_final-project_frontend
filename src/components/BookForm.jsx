@@ -32,14 +32,22 @@ export const BookForm = ({ onCreateBook, onUpdateBook, editingBook, isSaving }) 
                 <input className={styles['book-form__input']} type="text" name="title" placeholder="Enter book title" defaultValue={editingBook ? editingBook.title : ''} required />
                 <label className={styles["book-form__label"]} htmlFor="author">Author</label>
                 <input className={styles['book-form__input']} type="text" name="author" placeholder="Enter author name" defaultValue={editingBook ? editingBook.author : ''} required />
-                <label className={styles["book-form__label"]} htmlFor="year">Publication Year</label>
-                <input className={styles['book-form__input']} type="text" name="year" placeholder="Year" defaultValue={editingBook ? editingBook.year : '2025'} required />
-                <label className={styles["book-form__label"]} htmlFor="status">Reading Status</label>
-                <select className={styles['book-form__select']} name="status" defaultValue={editingBook ? editingBook.status : 'pending'} >
-                    <option value="pending">Pending</option>
-                    <option value="in progress">In Progress</option>
-                    <option value="read">Read</option>
-                </select>
+
+                <div className={styles["book-form__row"]}>
+                    <div className={styles["book-form__field"]}>
+                        <label className={styles["book-form__label"]} htmlFor="year">Publication Year</label>
+                        <input className={styles['book-form__input']} type="text" name="year" placeholder="Year" defaultValue={editingBook ? editingBook.year : '2025'} required />
+                    </div>
+                    <div className={styles["book-form__field"]}>
+                        <label className={styles["book-form__label"]} htmlFor="status">Reading Status</label>
+                        <select className={styles['book-form__select']} name="status" defaultValue={editingBook ? editingBook.status : 'pending'} >
+                            <option value="pending">Pending</option>
+                            <option value="in progress">In Progress</option>
+                            <option value="read">Read</option>
+                        </select>
+                    </div>
+                </div>
+                
                 <div className={styles['book-form__actions']}>
                     <button className={styles['book-form__button']} type="submit" disabled={isSaving}>
                         {isSaving ? "Saving..." : editingBook ? "Update Book" : "Add Book"}

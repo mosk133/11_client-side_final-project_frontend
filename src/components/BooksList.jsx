@@ -1,4 +1,5 @@
 import { BookCard } from './BookCard';
+import styles from './BooksList.module.css';
 
 export const BooksList = ({ bookList, onDeleteBook, onEditBook, loading, saving }) => {
     if (loading) {
@@ -18,7 +19,7 @@ export const BooksList = ({ bookList, onDeleteBook, onEditBook, loading, saving 
     }
 
     return (
-        <ul>
+        <ul className={styles['books-list']}>
             {bookList.map((book) => {
                 return <BookCard key={book.id} book={book} onDelete={() => onDeleteBook(book.id)} onEdit={() => onEditBook(book)}  />;
             })}
