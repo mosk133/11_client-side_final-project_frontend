@@ -4,7 +4,7 @@ import styles from './BooksList.module.css';
 export const BooksList = ({ bookList, onDeleteBook, onEditBook, loading, saving }) => {
     if (loading) {
         return (
-            <div>
+            <div className={styles['books-list__loading']}>
                 <span>Loading books...</span>
             </div>
         )
