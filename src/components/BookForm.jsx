@@ -47,7 +47,7 @@ export const BookForm = ({ onCreateBook, onUpdateBook, editingBook, isSaving }) 
                         </select>
                     </div>
                 </div>
-                
+
                 <div className={styles['book-form__actions']}>
                     <button className={styles['book-form__button']} type="submit" disabled={isSaving}>
                         {isSaving ? "Saving..." : editingBook ? "Update Book" : "Add Book"}

@@ -9,7 +9,7 @@ export const BooksList = ({ bookList, onDeleteBook, onEditBook, loading, saving 
             </div>
         )
     }
-    
+
     if (saving) {
         return null;
     }
@@ -21,7 +21,7 @@ export const BooksList = ({ bookList, onDeleteBook, onEditBook, loading, saving 
     return (
         <ul className={styles['books-list']}>
             {bookList.map((book) => {
-                return <BookCard key={book.id} book={book} onDelete={() => onDeleteBook(book.id)} onEdit={() => onEditBook(book)}  />;
+                return <BookCard key={book.id} book={book} onDelete={() => onDeleteBook(book.id)} onEdit={() => onEditBook(book)} />;
             })}
         </ul>
     );
