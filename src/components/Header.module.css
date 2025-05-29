@@ -1,13 +1,8 @@
-.header {
-    margin-top: 0px;
-    margin-bottom: 16px;
-    font-weight: 600;
-    font-size: 1.5rem;
-}
+@import '../variables.css';
 
-@media (prefers-color-scheme: light) {
-    .header {
-        background-color: #ffffff;
-        color: black;
-    }
+.header {
+    margin-top: 0;
+    margin-bottom: var(--margin-bottom-header);
+    font-weight: var(--font-weight-header);
+    font-size: var(--font-size-header);
 }

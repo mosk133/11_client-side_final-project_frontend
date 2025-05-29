@@ -3,7 +3,7 @@ import { BooksList } from './components/BooksList';
 import { BookForm } from './components/BookForm';
 import { useBooks } from './hooks/useBooks'
 import { useBookForm } from './hooks/useBookForm';
-import styles from './components/App.module.css';
+import styles from './App.module.css';
 
 function App() {
   const { books, addBook, updateBook, deleteBook, isLoading, isSaving } = useBooks([]);

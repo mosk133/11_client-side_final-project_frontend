@@ -1,106 +1,85 @@
+@import '../variables.css';
+
 .book-form {
-    background-color: #ffffff;
-    padding: 1.1rem;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-    margin-bottom: 1.5rem;
+    background-color: var(--background-form);
+    padding: var(--padding-form);
+    border-radius: var(--border-radius-form);
+    box-shadow: var(--box-shadow-form);
+    margin-bottom: var(--margin-bottom-form);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--gap-form);
 }
 
 .book-form__title {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: #222;
+    font-size: var(--font-size-form-title);
+    font-weight: var(--font-weight-medium);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--color-form-title);
 }
 
 .book-form__label {
     font-weight: 600;
-    font-size: 0.95rem;
-    color: #333;
+    font-size: var(--font-size-label);
+    color: var(--color-form-label);
 }
 
 .book-form__input,
 .book-form__select {
-    padding: 1rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
+    padding: var(--padding-input);
+    border: 1px solid var(--border-form-input);
+    border-radius: var(--border-radius-input);
+    font-size: var(--font-size-md);
     transition: border-color 0.2s ease;
     margin-top: -5px;
-    background: white;
+    background: var(--color-bg-light);
 }
 
 .book-form__button {
-    background-color: #4caf50;
-    color: white;
+    background-color: var(--background-button-primary);
+    color: var(--color-button-text-light);
     border: none;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 6px;
+    padding: var(--padding-md) var(--padding-xl);
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius-input);
     cursor: pointer;
     transition: background-color 0.2s ease;
     align-self: flex-start;
 }
 
-.book-form__actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 1.2rem;
-}
-
 .book-form__button:active {
-    background-color: #43a047;
+    background-color: var(--background-button-primary-active);
 }
 
 .book-form__button:disabled {
-    background-color: #a5d6a7;
+    background-color: var(--background-button-disabled);
     cursor: not-allowed;
 }
 
-@media (prefers-color-scheme: dark) {
-    .book-form {
-        background-color: #333333;
-        color: #f1f1f1;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    }
-
-    .book-form__title {
-        color: white;
-    }
-
-    .book-form__label {
-        color: white;
-    }
-
-    .book-form__input,
-    .book-form__select {
-        background-color: #2a2a2a;
-        border: 1px solid #555;
-        color: #f1f1f1;
-    }
+.book-form__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--margin-top-form-actions);
 }
 
 .book-form__row {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--gap-form);
 }
 
 .book-form__field {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--gap-form);
     flex: 1;
 }
 
 @media (min-width: 768px) {
     .book-form__row {
         flex-direction: row;
-        gap: 1.5rem;
+        gap: var(--gap-form-row-desktop);
     }
 
     .book-form__field {
