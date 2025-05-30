@@ -1,0 +1,18 @@
+@import '../variables.css';
+
+.books-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--gap-books-list);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.books-list__loading {
+    text-align: center;
+    border-radius: var(--border-radius-books-list-loading);
+    background-color: var(--background-books-list-loading);
+    padding: var(--padding-books-list-loading);
+    font-weight: var(--font-weight-loading);
+}

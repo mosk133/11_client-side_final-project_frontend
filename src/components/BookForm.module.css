@@ -1,0 +1,93 @@
+@import '../variables.css';
+
+.book-form {
+    background-color: var(--background-form);
+    padding: var(--padding-form);
+    border-radius: var(--border-radius-form);
+    box-shadow: var(--box-shadow-form);
+    margin-bottom: var(--margin-bottom-form);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-form);
+}
+
+.book-form__title {
+    font-size: var(--font-size-form-title);
+    font-weight: var(--font-weight-medium);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--color-form-title);
+}
+
+.book-form__label {
+    font-weight: 600;
+    font-size: var(--font-size-label);
+    color: var(--color-form-label);
+}
+
+.book-form__input,
+.book-form__select {
+    padding: var(--padding-input);
+    border: 1px solid var(--border-form-input);
+    border-radius: var(--border-radius-input);
+    font-size: var(--font-size-md);
+    transition: border-color 0.2s ease;
+    margin-top: -5px;
+    background: var(--color-bg-light);
+}
+
+.book-form__button {
+    background-color: var(--background-button-primary);
+    color: var(--color-button-text-light);
+    border: none;
+    padding: var(--padding-md) var(--padding-xl);
+    font-size: var(--font-size-md);
+    border-radius: var(--border-radius-input);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+}
+
+.book-form__button:active {
+    background-color: var(--background-button-primary-active);
+}
+
+.book-form__button:disabled {
+    background-color: var(--background-button-disabled);
+    cursor: not-allowed;
+}
+
+.book-form__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--margin-top-form-actions);
+}
+
+.book-form__row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-form);
+}
+
+.book-form__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-form);
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .book-form__row {
+        flex-direction: row;
+        gap: var(--gap-form-row-desktop);
+    }
+
+    .book-form__field {
+        flex-direction: column;
+    }
+
+    .book-form__label {
+        width: auto;
+        margin: 0;
+    }
+}

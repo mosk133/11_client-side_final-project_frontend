@@ -1,33 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Header } from './components/Header'
+import { BooksList } from './components/BooksList';
+import { BookForm } from './components/BookForm';
+import { useBooks } from './hooks/useBooks'
+import { useBookForm } from './hooks/useBookForm';
+import styles from './App.module.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { books, addBook, updateBook, deleteBook, isLoading, isSaving } = useBooks([]);
+  const { isVisible, editingBook, openFormForAdd, openFormForEdit, closeForm } = useBookForm();
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+
+      <button className={styles.button} onClick={isVisible ? closeForm : openFormForAdd}>
+        {isVisible ? "Cancel" : "Add New Book"}
+      </button>
+
+      {isVisible && <BookForm onCreateBook={addBook} onUpdateBook={updateBook} editingBook={editingBook} isSaving={isSaving} />}
+      <BooksList bookList={books} onDeleteBook={deleteBook} onEditBook={openFormForEdit} loading={isLoading} saving={isSaving} />
     </>
   )
 }

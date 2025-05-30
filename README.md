@@ -1,12 +1,106 @@
-# React + Vite
+# Final Project – Client-Side Development
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Author:** Guillem Martin Garcia  
+**Production URL:** [https://11-final-project-frontend.netlify.app/](https://11-final-project-frontend.netlify.app/)
 
-Currently, two official plugins are available:
+## 🚀 Production
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can view the live application here:  
+🔗 [https://11-final-project-frontend.netlify.app/](https://11-final-project-frontend.netlify.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/mosk133/11_client-side_final-project_frontend.git
+cd 11_client-side_final-project_frontend
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the development server
+
+```bash
+npm run dev
+```
+
+This will start the app at `http://localhost:5173` by default.
+
+---
+
+## ✅ Available Scripts
+
+-   `npm run dev` – Start development server
+-   `npm run build` – Build for production
+-   `npm run preview` – Preview the built app
+-   `npm run lint` – Lint the codebase
+-   `npm run lint:fix` – Lint and fix issues
+-   `npm run format` – Format code with Prettier
+-   `npm run test` – Run tests in watch mode
+-   `npm run test:run` – Run tests once (used in CI)
+
+---
+
+## 🧪 Testing & Linting
+
+-   Uses **Vitest** for testing
+-   Uses **ESLint** for linting
+-   **Husky** hooks are configured for:
+    -   `pre-commit`: format code with Prettier
+    -   `pre-push`: run tests
+
+---
+
+## 🗂️ Project Structure
+
+```
+├── .github
+├── .husky
+├── public
+├── src
+│   ├── assets
+│   ├── components
+│   │   ├── BookCard.jsx
+│   │   ├── BookCard.module.css
+│   │   ├── BookCard.test.jsx
+│   │   ├── BookForm.jsx
+│   │   ├── BookForm.module.css
+│   │   ├── BookForm.test.jsx
+│   │   ├── BooksList.jsx
+│   │   ├── BooksList.module.css
+│   │   ├── BooksList.test.jsx
+│   │   ├── Header.jsx
+│   │   ├── Header.module.css
+│   │   └── Header.test.jsx
+│   ├── hooks
+│   │   ├── useBookForm.js
+│   │   ├── useBooks.js
+│   │   └── useUIStates.js
+│   ├── App.jsx
+│   ├── App.module.css
+│   ├── index.css
+│   ├── main.jsx
+│   └── variables.css
+│
+├── .env
+├── .gitignore
+├── .prettierrc
+├── eslint.config.js
+├── vite.config.js
+├── index.html
+├── package-lock.json
+└── package.json
+```
+
+---
+
+## 🔗 GitHub Repository
+
+[https://github.com/mosk133/11_client-side_final-project_frontend](https://github.com/mosk133/11_client-side_final-project_frontend)

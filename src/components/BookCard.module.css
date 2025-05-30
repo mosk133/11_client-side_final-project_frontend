@@ -1,0 +1,109 @@
+@import '../variables.css';
+
+.book-card {
+    background: var(--color-bg-light);
+    border-radius: var(--space-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding-top: var(--padding-xs);
+    padding-bottom: var(--padding-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.book-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: var(--padding-md-plus);
+    padding-right: var(--padding-md-plus);
+}
+
+.book-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    margin: 0;
+}
+
+.book-card__author {
+    margin: 0;
+    color: var(--text-muted);
+    padding-left: var(--padding-md-plus);
+    padding-bottom: var(--padding-md-strong);
+    border-bottom: 1px solid var(--border-light);
+    margin-top: var(--margin-top-book-author);
+}
+
+.book-card__year {
+    background-color: var(--background-light-gray);
+    border-radius: var(--border-radius-md);
+    padding: var(--padding-xs) var(--padding-sm-plus);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+}
+
+.book-card__status-wrapper {
+    padding-left: var(--padding-md-plus);
+    margin-top: var(--margin-top-sm);
+    margin-bottom: var(--margin-bottom-sm);
+}
+
+.book-card__status {
+    align-self: flex-start;
+    padding: var(--padding-xs) var(--padding-sm-strong);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xxs);
+    font-weight: var(--font-weight-medium);
+    text-transform: lowercase;
+}
+
+.book-card__status--in-progress {
+    background-color: var(--background-status-in-progress);
+    color: var(--color-status-in-progress);
+}
+
+.book-card__status--pending {
+    background-color: var(--background-status-pending);
+    color: var(--color-status-pending);
+}
+
+.book-card__status--read {
+    background-color: var(--background-status-read);
+    color: var(--color-status-read);
+}
+
+.book-card__actions {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-xs);
+    padding-top: var(--padding-md);
+    border-top: 1px solid var(--border-light);
+    padding-left: var(--padding-md-plus);
+    padding-right: var(--padding-md-plus);
+}
+
+.book-card__button {
+    padding: var(--padding-sm-strong) var(--padding-sm-strong);
+    border-radius: var(--border-radius-sm);
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-md);
+}
+
+.book-card__button--edit {
+    background: var(--background-button-edit);
+}
+
+.book-card__button--edit:active {
+    background: var(--background-button-edit-active);
+}
+
+.book-card__button--delete {
+    background: var(--background-button-delete);
+    color: var(--color-button-delete);
+    font-weight: var(--font-weight-medium);
+}
+
+.book-card__button--delete:active {
+    background: var(--background-button-delete-active);
+}

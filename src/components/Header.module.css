@@ -1,0 +1,8 @@
+@import '../variables.css';
+
+.header {
+    margin-top: 0;
+    margin-bottom: var(--margin-bottom-header);
+    font-weight: var(--font-weight-header);
+    font-size: var(--font-size-header);
+}
